@@ -35,7 +35,7 @@ class BookController extends Controller
 
         Book::create($validated);
 
-        return redirect()->route('home')->with('success', 'Book added successfully!');
+        return redirect()->route('dashboard')->with('success', 'Book added successfully!');
     }
 
     /**

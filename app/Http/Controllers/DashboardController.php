@@ -31,7 +31,7 @@ class DashboardController extends Controller
             })
             ->paginate(6);
 
-        return view('book.book', compact('books', 'search'));
+        return view('book.index', compact('books', 'search'));
     }
 
     public function borrower(Request $request)
@@ -45,7 +45,7 @@ class DashboardController extends Controller
         })
             ->paginate(10);
 
-        return view('borrower.borrower', compact('borrowers', 'search'));
+        return view('borrower.index', compact('borrowers', 'search'));
     }
 
     public function search(Request $request)
