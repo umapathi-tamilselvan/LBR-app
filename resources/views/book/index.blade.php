@@ -3,7 +3,7 @@
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-3 col-lg-2 p-0 shadow-lg"
-            style="background-color: #5f6469; position: fixed; top: 0; left: 0; height: 100vh; border-right: 1px solid #e0e0e0;">
+            style="background-color: #9aa1a1; position: fixed; top: 0; left: 0; height: 100vh; border-right: 1px solid #e0e0e0;">
 
             <a href="{{ route('dashboard') }}" class="d-block text-center fw-bold bg-white py-3 text-dark sidebar-link">
                 <h4 class="mb-0" style="font-size: 22px;">📚 Library Menu</h4>
@@ -54,7 +54,7 @@
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="booksGrid">
                         @forelse ($books as $book)
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="card shadow-sm border-0 rounded-3 hover-shadow-lg" style="transition: all 0.3s ease;">
+                            <div class="card shadow-lg border-0 rounded-3 hover-shadow-lg" style="transition: all 0.3s ease;">
                                 <!-- Image with reduced size -->
                                 <img src="{{ asset($book->image ? 'storage/' . $book->image : 'images/default-book.png') }}"
                                      class="card-img-top"

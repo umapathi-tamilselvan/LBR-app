@@ -29,7 +29,7 @@ class DashboardController extends Controller
                 $query->where('name', 'like', "%{$search}%")
                     ->orWhere('author', 'like', "%{$search}%");
             })
-            ->paginate(6);
+            ->paginate(8);
 
         return view('book.index', compact('books', 'search'));
     }
