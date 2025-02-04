@@ -21,7 +21,7 @@ class BorrowerController extends Controller
         ]);
         Borrower::create($validated);
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard');
     }
 
     public function destroy($id)

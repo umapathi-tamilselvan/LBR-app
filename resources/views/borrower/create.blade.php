@@ -58,7 +58,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="mobile_no" class="form-label">Total Copies</label>
+                                        <label for="mobile_no" class="form-label">Mobile Number</label>
                                         <input type="number" class="form-control @error('mobile_no') is-invalid @enderror" id="mobile_no" name="mobile_no" value="{{ old('mobile_no') }}" required>
                                         @error('mobile_no')
                                             <div class="invalid-feedback">{{ $message }}</div>

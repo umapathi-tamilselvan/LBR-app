@@ -61,7 +61,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $category->name }}</td>
                                                 <td>
-                                                    <form action="{{ url('category/delete', $category->id) }}" method="POST" class="d-inline">
+                                                    <form action="{{route('category.delete',$category->id) }}" method="POST" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm">

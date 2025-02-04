@@ -30,6 +30,14 @@ class CategoryController extends Controller
         $category->name = request()->name;
         $category->save($data);
 
-        return redirect('/home');
+        return redirect('/dashboard');
+    }
+
+    public function destroy($id)
+    {
+        $category=Category::findOrFail($id);
+        $category->delete();
+        return redirect()->back();
+
     }
 }
