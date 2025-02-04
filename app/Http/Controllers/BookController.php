@@ -29,9 +29,7 @@ class BookController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $validated['image'] = $request->hasFile('image')
-            ? $request->file('image')->store('books', 'public')
-            : null;
+        $validated['image'] = $request->hasFile('image')? $request->file('image')->store('books', 'public'): null;
 
         Book::create($validated);
 

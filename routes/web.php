@@ -47,6 +47,7 @@ Route::delete('/borrower/delete/{id}', [BorrowerController::class, 'destroy'])->
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('category/add', [CategoryController::class, 'create'])->name('category');
 Route::post('/category', [CategoryController::class, 'store'])->name('category');
+Route::delete('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 
 
 require __DIR__.'/auth.php';
