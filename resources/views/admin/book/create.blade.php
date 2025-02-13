@@ -37,7 +37,7 @@
                                 <h3 class="mb-0">Add New Book</h3>
                             </div>
                             <div class="card-body">
-                                <form action="{{ url('/book') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('books') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
                                     <!-- Book Name -->
@@ -112,7 +112,7 @@
 
         </div>
     </div>
-    
+
     <style>
         .nav-link {
             transition: background-color 0.3s ease, color 0.3s ease;

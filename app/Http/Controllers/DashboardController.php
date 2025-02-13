@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isAdmin');
+    }
+
     public function index()
     {
         $bookCount = Book::where('total_copies', '>', 0)->sum('total_copies');
@@ -30,7 +35,7 @@ class DashboardController extends Controller
             })
             ->paginate(8);
 
-        return view('book.index', compact('books', 'search'));
+        return view('admin.book.index', compact('books', 'search'));
     }
 
     public function borrower(Request $request)
@@ -43,7 +48,7 @@ class DashboardController extends Controller
         })
             ->paginate(10);
 
-        return view('borrower.index', compact('borrowers', 'search'));
+        return view('admin.borrower.index', compact('borrowers', 'search'));
     }
 
     public function search(Request $request)
@@ -57,7 +62,6 @@ class DashboardController extends Controller
         $borrowers = Borrower::where('name', 'like', '%'.$query.'%')->get();
         $categories = Category::where('name', 'like', '%'.$query.'%')->get();
 
-        return view('search.index', compact('books', 'borrowers', 'categories', 'query'));
+        return view('admin.search.index', compact('books', 'borrowers', 'categories', 'query'));
     }
-
 }

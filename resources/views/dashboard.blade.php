@@ -1,5 +1,6 @@
 <x-app-layout>
     <div class="container-fluid bg-light" style="min-height: 100vh;">
+
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-3 col-lg-2 p-0 shadow-lg"
