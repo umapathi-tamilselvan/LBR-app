@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
         $categories = Category::with('books')->get();
 
-        return view('category.index', compact('categories'));
+        return view('admin.category.index', compact('categories'));
     }
 
     public function create()
     {
-        return view('category.create');
+        return view('admin.category.create');
     }
 
     public function store()
@@ -35,9 +38,9 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category=Category::findOrFail($id);
+        $category = Category::findOrFail($id);
         $category->delete();
-        return redirect()->back();
 
+        return redirect()->back();
     }
 }

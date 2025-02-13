@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Book>
@@ -50,6 +50,7 @@ class BookFactory extends Factory
             'author' => $book['author'],
             'image' => $imagePath,
             'total_copies' => 10,
+            'available_copies' => 10,
             'category_id' => \App\Models\Category::inRandomOrder()->first()->id, // Assign random category
         ];
     }

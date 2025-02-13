@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class BorrowerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isAdmin');
+    }
+
     public function index()
     {
-        return view('borrower.create');
+        return view('admin.borrower.create');
     }
 
     public function create(Request $request)

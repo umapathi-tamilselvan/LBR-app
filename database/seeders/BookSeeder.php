@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BookSeeder extends Seeder
 {
@@ -20,11 +19,12 @@ class BookSeeder extends Seeder
         // Ensure there are categories in the database before seeding books
         if ($categories->isEmpty()) {
             $this->command->info('No categories found! Please seed categories first.');
+
             return;
         }
 
         // You can seed 10 books for example, adjust as needed
-        Book::factory(10)->create()->each(function ($book) use ($categories) {
+        Book::factory()->create()->each(function ($book) use ($categories) {
             // Assign a random category to each book
             $book->category_id = $categories->random()->id;
             $book->save();
